@@ -1,0 +1,286 @@
+  @import "tailwindcss";
+  
+  /*=========================L0gin css ======================*/
+/* Lightning bolt animations */
+@keyframes lightning {
+  0%,
+  90%,
+  100% {
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg);
+  }
+  5%,
+  10% {
+    opacity: 1;
+    transform: scale(1) rotate(-2deg);
+  }
+  15%,
+  20% {
+    opacity: 0.8;
+    transform: scale(1.1) rotate(1deg);
+  }
+  25% {
+    opacity: 0;
+    transform: scale(0.9) rotate(-1deg);
+  }
+}
+
+@keyframes lightning-glow {
+  0%,
+  90%,
+  100% {
+    box-shadow: 0 0 0 rgba(59, 130, 246, 0);
+  }
+  5%,
+  15% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(147, 51, 234, 0.3);
+  }
+}
+
+.lightning-bolt {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #3b82f6, #8b5cf6, transparent);
+  animation: lightning 4s infinite;
+}
+
+.lightning-bolt-1 {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+  transform: rotate(15deg);
+}
+
+.lightning-bolt-2 {
+  top: 60%;
+  right: 25%;
+  animation-delay: 1.5s;
+  transform: rotate(-20deg);
+  height: 80px;
+}
+
+.lightning-bolt-3 {
+  top: 30%;
+  left: 70%;
+  animation-delay: 3s;
+  transform: rotate(10deg);
+  height: 120px;
+}
+
+/* Electric pulse effect */
+@keyframes electric-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(147, 51, 234, 0.4);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2563eb, #7c3aed);
+}
+
+/* Smooth scroll */
+.scrollbar{
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+
+
+
+
+/* Custom styles for markdown content */
+.prose {
+  color: inherit;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.prose h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem 0;
+  color: #1f2937;
+}
+
+.dark .prose h1 {
+  color: #f9fafb;
+}
+
+.prose h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem 0;
+  color: #374151;
+}
+
+.dark .prose h2 {
+  color: #e5e7eb;
+}
+
+.prose h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+  color: #4b5563;
+}
+
+.dark .prose h3 {
+  color: #d1d5db;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.dark .prose strong {
+  color: #f3f4f6;
+}
+
+.prose em {
+  font-style: italic;
+  color: #6b7280;
+}
+
+.dark .prose em {
+  color: #9ca3af;
+}
+
+.prose ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.prose li::marker {
+  color: #6b7280;
+}
+
+.dark .prose li::marker {
+  color: #9ca3af;
+}
+
+.code-block {
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.dark .code-block {
+  border-color: #374151;
+}
+
+.code-header {
+  background: #f9fafb;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dark .code-header {
+  background: #1f2937;
+  color: #9ca3af;
+  border-bottom-color: #374151;
+}
+
+.code-block pre {
+  background: #f8fafc;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.dark .code-block pre {
+  background: #111827;
+}
+
+.code-block code {
+  color: #1f2937;
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+.dark .code-block code {
+  color: #f3f4f6;
+}
+
+.inline-code {
+  background: #f3f4f6;
+  color: #dc2626;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+  font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+.dark .inline-code {
+  background: #374151;
+  color: #fca5a5;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
