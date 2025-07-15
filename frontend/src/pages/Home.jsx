@@ -16,7 +16,7 @@ import { FiSend, FiZap, FiStar, FiTrendingUp } from "react-icons/fi";
 import { MdClear, MdScience } from "react-icons/md";
 import { BsRocket, BsLightning, BsMagic } from "react-icons/bs";
 import { useEffect, useRef } from "react";
-import MarkdownRenderer from "../components/markdown-renderer"; // Import markdown renderer
+import MarkdownRenderer from "../components/markdown-renderer";
 
 const Home = () => {
   const LoadingSmall = ({
@@ -65,7 +65,6 @@ const Home = () => {
     setMessages([]);
   };
 
-  // 4 Interactive Components Data
   const quickActions = [
     {
       id: 1,
@@ -179,7 +178,6 @@ const Home = () => {
                       <FaRobot className="text-white text-lg" />
                     </div>
                     <div className="bg-gradient-to-r from-gray-800 to-gray-700 text-white p-4 rounded-2xl rounded-tl-md max-w-[80%] break-words shadow-lg transform hover:scale-[1.02] transition-all duration-300">
-                      {/* Using MarkdownRenderer instead of simple text */}
                       <MarkdownRenderer content={e.answer} />
                     </div>
                   </div>
@@ -187,7 +185,6 @@ const Home = () => {
               ))}
             </div>
           ) : (
-            /* Enhanced Welcome Screen with 4 Components */
             <div className="flex items-center justify-center min-h-full p-6">
               <div className="w-full max-w-6xl">
                 {/* Welcome Header */}
@@ -244,41 +241,33 @@ const Home = () => {
                         `}
                         style={{ animationDelay: `${0.6 + index * 0.1}s` }}
                       >
-                        {/* Background Gradient Effect */}
                         <div
                           className={`absolute inset-0 bg-gradient-to-br ${action.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                         ></div>
 
-                        {/* Animated Border */}
                         <div
                           className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${action.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
                         ></div>
 
-                        {/* Glow Effect */}
                         <div
                           className={`absolute -inset-1 rounded-3xl bg-gradient-to-r ${action.gradient} opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500 -z-10`}
                         ></div>
 
-                        {/* Content */}
                         <div className="relative z-10">
-                          {/* Icon */}
                           <div
                             className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${action.gradient} mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500 shadow-lg`}
                           >
                             <IconComponent className="text-2xl text-white" />
                           </div>
 
-                          {/* Title */}
                           <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-white group-hover:to-gray-200 transition-all duration-500">
                             {action.title}
                           </h3>
 
-                          {/* Description */}
                           <p className="text-gray-400 text-base mb-6 group-hover:text-gray-200 transition-colors duration-500 leading-relaxed">
                             {action.description}
                           </p>
 
-                          {/* Action Button */}
                           <div className="flex items-center justify-between">
                             <div className="flex items-center text-sm text-gray-500 group-hover:text-white transition-colors duration-500">
                               <span className="mr-2 font-medium">
@@ -290,7 +279,6 @@ const Home = () => {
                           </div>
                         </div>
 
-                        {/* Floating Elements */}
                         <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-500"></div>
                         <div className="absolute bottom-4 left-4 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-500"></div>
                       </div>
@@ -298,7 +286,6 @@ const Home = () => {
                   })}
                 </div>
 
-                {/* Bottom Features */}
                 <div
                   className="text-center animate-fade-in-up"
                   style={{ animationDelay: "1s" }}
@@ -324,7 +311,6 @@ const Home = () => {
             </div>
           )}
 
-          {/* Loading Indicator */}
           {newRequestLoding && (
             <div className="max-w-4xl mx-auto">
               <div className="flex items-start gap-3 animate-fade-in-left">
@@ -387,7 +373,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Custom Animations */}
       <style jsx>{`
         @keyframes fade-in-up {
           from {
